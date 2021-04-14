@@ -21,7 +21,7 @@ To reduce the exposure in clear of sensitive data, you can combine AWS CloudFron
 ### NOTE ###
 
 In this example, I have used [RSA Key Generator](https://travistidwell.com/jsencrypt/demo/), and I put the Key inside the Lambda function.
-#You should use AWS KMS or AWS SSM Parameter store#
+**You should use AWS KMS or AWS SSM Parameter store**
 
 ### Lambda@Edge configuration ###
 
