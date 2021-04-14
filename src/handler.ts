@@ -9,7 +9,7 @@ export const handler = async (event: any): Promise<any> => {
   console.log(JSON.stringify(event));
   const request = event.Records[0].cf.request;
 
-  if (request.uri === "/v2/signup") {
+  if (request.uri === "/signup") {
     const decodedBase64 = Buffer.from(request.body.data, "base64").toString("utf8");
     const payload = JSON.parse(decodedBase64);
     PII_SENSITIVE_FIELD_NAMES.forEach(prop => {
