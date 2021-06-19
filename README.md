@@ -14,7 +14,7 @@ To reduce the exposure in clear of sensitive data, you can combine AWS CloudFron
 
 * Intercept data
 * Encrypt at the edge
-* Pass it through before application can process it, reducing exposure.
+* Pass it through before the application can process it, reducing exposure.
 
 ![picture](https://bitbucket.org/DanBranch/protect_sensitive_data_with_lambda-edge/downloads/arch.png)
 
@@ -36,7 +36,7 @@ In this example, I have used [RSA Key Generator](https://travistidwell.com/jsenc
 
 ### How does it works? ###
 
-User register to our service and the application make a POST to your HTTP endpoint behind CloudFront
+User register to our service, and the application make a POST to your HTTP endpoint behind CloudFront
 ```javaScript
 {
   "email": "aaaa@aaaaa.aaa",
@@ -79,6 +79,6 @@ function decrypt(input: Buffer): string {
 }
 ```
 
-You will end up storing it in my case DynamoDB in this way:
+You will end up storing it, in my case DynamoDB in this way:
 
 ![picture](https://bitbucket.org/DanBranch/protect_sensitive_data_with_lambda-edge/downloads/storage.png)
