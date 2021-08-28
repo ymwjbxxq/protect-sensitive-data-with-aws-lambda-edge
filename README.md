@@ -16,7 +16,7 @@ To reduce the exposure in clear of sensitive data, you can combine AWS CloudFron
 * Encrypt at the edge
 * Pass it through before the application can process it, reducing exposure.
 
-![picture](https://bitbucket.org/DanBranch/protect_sensitive_data_with_lambda-edge/downloads/arch.png)
+![picture](https://github.com/ymwjbxxq/protect-sensitive-data-with-aws-lambda-edge/blob/master/arch.png)
 
 ### NOTE ###
 
@@ -48,13 +48,13 @@ User register to our service, and the application make a POST to your HTTP endpo
 
 The Lambda@Edge will intercept the request coming from CloudFront:
 
-![picture](https://bitbucket.org/DanBranch/protect_sensitive_data_with_lambda-edge/downloads/input.png)
+![picture](https://github.com/ymwjbxxq/protect-sensitive-data-with-aws-lambda-edge/blob/master/input.png)
 
 Will decrypt the base64 "request.body.data" field, search for PII_SENSITIVE_FIELD_NAMES, and encrypt the value with the PUBLIC_KEY provided.
 
 Once the data is replaced, it will arrive at your signup endpoint in this way:
 
-![picture](https://bitbucket.org/DanBranch/protect_sensitive_data_with_lambda-edge/downloads/receiver.png)
+![picture](https://github.com/ymwjbxxq/protect-sensitive-data-with-aws-lambda-edge/blob/master/receiver.png)
 
 
 Inside the Signup Lambda function, you can read the "request.body" and do the following:
@@ -81,4 +81,4 @@ function decrypt(input: Buffer): string {
 
 You will end up storing it, in my case DynamoDB in this way:
 
-![picture](https://bitbucket.org/DanBranch/protect_sensitive_data_with_lambda-edge/downloads/storage.png)
+![picture](https://github.com/ymwjbxxq/protect-sensitive-data-with-aws-lambda-edge/blob/master/storage.png)
